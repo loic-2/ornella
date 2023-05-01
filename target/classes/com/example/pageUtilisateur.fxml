@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="pageUtilisateurs" prefHeight="687.0" prefWidth="1113.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.UtilisateurController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="121.0" prefWidth="1065.0" spacing="20.0" style="-fx-padding: 20px;">
+         <children>
+            <MFXButton fx:id="ajouter1" buttonType="RAISED" onAction="#openPopUp" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #007bff; -fx-background-radius: 5px;" text="Ajouter" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER_MD" size="18">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </FontAwesomeIconView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXButton fx:id="supprimer1" buttonType="RAISED" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: red; -fx-background-radius: 5px;" text="Supprimer" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="18" />
+               </graphic>
+            </MFXButton>
+            <MFXButton buttonType="RAISED" onAction="#exporter" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: rgb(0,200,0); -fx-background-radius: 5px;" text="Exporter" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="DOWNLOAD" size="18" />
+               </graphic>
+            </MFXButton>
+            <MFXButton buttonType="RAISED" contentDisplay="CENTER" depthLevel="LEVEL1" onAction="#refresh" prefHeight="29.0" prefWidth="40.0" rippleAnimateShadow="true" style="-fx-background-color: #007bff;" text=" " textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="25" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="597.0">
+               <children>
+                  <MFXTextField fx:id="rechercher" minHeight="-Infinity" onInputMethodTextChanged="#recherche" prefHeight="35.0" prefWidth="280.0" promptText="Rechercher" style="-fx-border-color: #4059a9;">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </MFXTextField>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+      </HBox>
+      <TableView prefHeight="557.0">
+         <columns>
+            <TableColumn prefWidth="299.0" text="Nom" />
+            <TableColumn minWidth="0.0" prefWidth="188.0" text="Telephone" />
+            <TableColumn minWidth="0.0" prefWidth="184.0" text="Adresse" />
+            <TableColumn minWidth="0.0" prefWidth="197.0" text="Role" />
+            <TableColumn editable="false" minWidth="0.0" prefWidth="244.0" resizable="false" text="Action" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXRadioButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="722.0" style="-fx-padding: 10px;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.AddPatientController">
+   <children>
+      <BorderPane prefHeight="41.0" prefWidth="389.0">
+         <center>
+            <Label fx:id="title" alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="612.0" text="Ajouter un patient" textFill="#4fb0e0" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </center>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </BorderPane>
+      <Label fx:id="erreur" alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="406.0" style="-fx-background-color: 20px;" text="Label" textFill="RED" visible="false" />
+      <GridPane prefHeight="438.0" prefWidth="702.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="392.0" prefWidth="351.0" style="-fx-padding: 10px; -fx-spacing: 10px;">
+               <children>
+                  <MFXTextField fx:id="nom" floatMode="BORDER" floatingText="Nom" prefHeight="51.0" prefWidth="323.0" style="-fx-border-color: #4fb0e0;" styleClass="text-field" />
+                  <MFXDatePicker fx:id="date" floatMode="BORDER" floatingText="Date de naissance" prefHeight="52.0" prefWidth="323.0" style="-fx-border-color: #4fb0e0;" />
+                  <MFXTextField fx:id="poid" floatMode="BORDER" floatingText="Poid" prefHeight="51.0" prefWidth="323.0" style="-fx-border-color: #4fb0e0;" />
+                  <MFXTextField fx:id="taille" floatMode="BORDER" floatingText="Taille" prefHeight="51.0" prefWidth="323.0" style="-fx-border-color: #4fb0e0;" />
+                  <MFXTextField fx:id="telephone" floatMode="BORDER" floatingText="Telephone" prefHeight="51.0" prefWidth="323.0" style="-fx-border-color: #4fb0e0;" />
+                  <MFXTextField fx:id="adresse" floatMode="BORDER" floatingText="Adresse" prefHeight="51.0" prefWidth="323.0" style="-fx-border-color: #4fb0e0;" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 10px; -fx-spacing: 10px;" GridPane.columnIndex="1">
+               <children>
+                  <MFXTextField fx:id="numeroSecurite" floatMode="BORDER" floatingText="Numero de securite social" prefHeight="51.0" prefWidth="323.0" style="-fx-border-color: #4fb0e0;" styleClass="text-field">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </MFXTextField>
+                  <Label prefHeight="36.0" prefWidth="146.0" text="Groupe Sanguin" />
+                  <HBox prefHeight="31.0" prefWidth="331.0" style="-fx-spacing: 15px;">
+                     <children>
+                        <MFXRadioButton fx:id="groupeA" text="A">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </MFXRadioButton>
+                        <MFXRadioButton fx:id="groupeB" text="B">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </MFXRadioButton>
+                        <MFXRadioButton fx:id="groupeAB" text="AB">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </MFXRadioButton>
+                        <MFXRadioButton fx:id="groupeO" text="O">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </MFXRadioButton>
+                     </children>
+                  </HBox>
+                  <Label prefHeight="36.0" prefWidth="146.0" text="Groupe Rhesus" />
+                  <HBox prefHeight="31.0" prefWidth="331.0" style="-fx-spacing: 15px;">
+                     <children>
+                        <MFXRadioButton fx:id="rhesusPositif" text="RH+">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </MFXRadioButton>
+                        <MFXRadioButton fx:id="rhesusNegatif" text="RH-">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </MFXRadioButton>
+                     </children>
+                  </HBox>
+                  <JFXTextArea fx:id="antecedent" focusColor="#4fb0e0" labelFloat="true" promptText="Antecedent Medicaux" unFocusColor="#4fb0e0">
+                     <VBox.margin>
+                        <Insets bottom="15.0" top="30.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10px;">
+         <children>
+            <MFXButton onAction="#renitialiser" prefHeight="46.0" prefWidth="160.0" rippleColor="#f52e1c" style="-fx-background-color: red; -fx-background-radius: 20px;" text="Renitialiser" textFill="WHITE" />
+            <MFXButton onAction="#enregistrer" prefHeight="46.0" prefWidth="160.0" rippleColor="#15f287" style="-fx-background-color: #4fb0e0; -fx-background-radius: 20px;" text="Enregistrer" textFill="WHITE" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

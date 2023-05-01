@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane fx:id="mainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.MainController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="167.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1182.0" minWidth="10.0" prefWidth="1113.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox fx:id="verticalMenu" prefHeight="720.0" prefWidth="232.0" style="-fx-background-color: #348feb;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="BIENVENUE SUR MP-ASSURMANAGE" textAlignment="CENTER" wrappingWidth="156.7294921875">
+               <font>
+                  <Font name="Abyssinica SIL" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="5.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Label fx:id="home" onMouseClicked="#gotoDashBoard" prefHeight="53.0" prefWidth="215.0" style="-fx-label-padding: 10px; -fx-border-width: 0 0 0 5px; -fx-border-color: white; -fx-background-color: rgba(255, 255, 255, 0.16);" text="Tableau de Bord" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="DASHBOARD" />
+               </graphic>
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="medecins" contentDisplay="RIGHT" onMouseClicked="#gotoPageMedecin" prefHeight="53.0" prefWidth="215.0" style="-fx-label-padding: 10px;" styleClass="selected" text="Medecins" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <graphic>
+                  <FontAwesomeIconView fx:id="subIcon" fill="WHITE" glyphName="ANGLE_DOWN" size="25" textAlignment="RIGHT" wrappingWidth="59.071428298950195">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Label>
+            <VBox prefWidth="100.0" style="-fx-fill-width: false;">
+               <children>
+                  <Label fx:id="generaliste" onMouseClicked="#gotoPageGeneraliste" prefHeight="53.0" prefWidth="215.0" style="-fx-label-padding: 10px;" styleClass="selected" text="Generalistes" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="STETHOSCOPE" text="" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="specialiste" onMouseClicked="#gotoPageSpecialiste" prefHeight="53.0" prefWidth="215.0" style="-fx-label-padding: 10px;" styleClass="selected" text="Specialistes" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="STETHOSCOPE" text="" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <Label fx:id="patients" onMouseClicked="#gotoPagePatient" prefHeight="53.0" prefWidth="215.0" style="-fx-label-padding: 10px;" text="Patients" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USERS" />
+               </graphic>
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="1083.0" style="-fx-padding: 5px; -fx-background-color: #b2c1d1;">
+               <children>
+                  <FontAwesomeIconView glyphName="BARS" onMouseClicked="#toggleMenu" size="25" wrappingWidth="30.300000190734863" />
+                  <Label fx:id="pageTitle" prefHeight="32.0" prefWidth="864.0" text="Tableau de bord">
+                     <font>
+                        <Font name="Bitstream Vera Serif Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="date" alignment="CENTER" opacity="0.75" prefHeight="35.0" prefWidth="181.0" text="Mar 19:03:23" textFill="#1e2d5a">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox fx:id="rigntContainer" prefHeight="687.0" prefWidth="1113.0">
+               <children>
+                  <VBox fx:id="pageMedecin" prefHeight="687.0" prefWidth="1113.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="24.0" right="24.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</GridPane>
